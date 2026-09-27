@@ -1,0 +1,19 @@
+# Veri setleri
+data/
+*.jsonl
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+
+# Veri gölü klasörleri
+gol/
+gol_temiz/
