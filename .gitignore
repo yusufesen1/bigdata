@@ -17,3 +17,11 @@ venv/
 # Veri gölü klasörleri
 gol/
 gol_temiz/
+
+# Dağıtılmış parçalar
+makine1/
+makine2/
+makine3/
+*.parquet
+
+katalog.json
