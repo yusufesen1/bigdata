@@ -2,33 +2,33 @@ import os
 import pyarrow.dataset as ds
 import pyarrow.parquet as pq
 
-# Yıllara göre bölünmüş Parquet veri gölünü aç
+# Yillara gore bolumlenmis Parquet veri golu
 veri = ds.dataset(
     r"gol",
     format="parquet",
     partitioning="hive"
 )
 
-# Veri gölündeki yılları bul
+# Veri golundeki yillari bul
 yillar = sorted(
     set(
         veri.to_table(columns=["yil"])["yil"].to_pylist()
     )
 )
 
-print("Bulunan yıllar:")
+print("Bulunan yillar:")
 print(yillar)
 
-# Her yıl için küçük dosyaları birleştir
+# Her yil icin kucuk Parquet dosyalarini birlestir
 for yil in yillar:
-    print(f"{yil} yılı birleştiriliyor...")
+    print(f"{yil} yili birlestiriliyor...")
 
-    # Sadece ilgili yılın verisini oku
+    # Sadece ilgili yilin verisini oku
     alt = veri.to_table(
         filter=ds.field("yil") == yil
     )
 
-    # Yeni klasör
+    # Yeni klasor
     hedef = fr"gol_temiz\yil={yil}"
 
     os.makedirs(
@@ -36,11 +36,11 @@ for yil in yillar:
         exist_ok=True
     )
 
-    # O yıla ait verileri tek Parquet dosyasına yaz
+    # O yila ait verileri tek Parquet dosyasina yaz
     pq.write_table(
         alt,
         fr"{hedef}\bolum.parquet",
         compression="snappy"
     )
 
-print("Dosya birleştirme tamamlandı.")
+print("Dosya birlestirme tamamlandi.")
