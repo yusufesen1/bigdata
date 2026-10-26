@@ -1,0 +1,13 @@
+{
+  "toplam": 205000,
+  "zaman_eksik": 3000,
+  "metin_bos": 2500,
+  "puan_gecersiz": 2000,
+  "oy_negatif": 1000,
+  "zaman_aralik_disi": 2500,
+  "zaman_saniye_gibi": 2000,
+  "zaman_gelecek": 500,
+  "verified_bicim_bozuk": 153910,
+  "yinelenen_tam_fazla": 4000,
+  "yinelenen_anahtar_fazla": 5000
+}
